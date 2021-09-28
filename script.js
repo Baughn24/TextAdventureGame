@@ -33,3 +33,46 @@ OR
 ${enter}`;
 const gameOver5 = `You looked at the trap and the light BLINDED YOU! ${gameOver}`;
 const win = `The ghost trap sucked Slimer in and closed. CONGRATULATIONS! YOU CAUGHT SLIMER!!!`;
+
+// Alerts the user to start the game
+alert(start);
+
+// Sets the value of userInput to the user's entry
+let userInput = prompt(q1);
+
+// 1st Conditional Statement
+// NOTE: Prompt returns the value entered as a string. That is why double equals is used instead of triple equals here.
+if (userInput == 1) {
+   userInput = prompt(q2);
+//    2nd Conditional Statement-we keep nesting the IF statements becasue if they keep answering the questions right, it prompts them to go to the next question (AKA the next IF statement). The IF's are connected to the ELSE statements, so if they choose the wrong answer (IF) it will go to the ELSE statement that gives them the gameOver alert based on what they input
+    if (userInput == 1){
+        userInput = prompt(q3);
+        // 3rd Conditional Statement
+        if (userInput == 2){
+            userInput = prompt(q4);
+            // 4th Conditional Statement
+            if (userInput == 1){
+                userInput = prompt(q5);
+                // 5th Conditional Statement-last one so you have to put an alert not a prompt
+                if (userInput == 2){
+                    alert(win);
+                    // Connected to 5th Conditional Statement
+                } else {
+                    alert(gameOver5);
+                }
+            // This is connected to 4th conditional statement
+            } else {
+                alert(gameOver4)
+            }
+        // This is connected to 3rd conditional statement
+         } else {
+             alert(gameOver3);
+         }
+        // This else is connected to 2nd conditional statement
+    } else {
+        alert(gameOver2);
+    }
+// This else is connected to 1st conditional statement
+} else {
+    alert(gameOver1);
+}
